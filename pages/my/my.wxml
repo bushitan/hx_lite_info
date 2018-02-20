@@ -1,0 +1,157 @@
+<!--pages/together/together.wxml-->
+<view class="page"  >
+
+     <view  style='height:10px;' ></view>   
+       <view class="xx_menu ">
+        <view  url="" class="xx_menu__node ">
+            <view class="xx_menu__node_logo" catchtap="clickLogo">
+                <image src="{{logo}}"></image>
+            </view>
+            <view class="xx_menu__node_name">
+                    <view class="xx_text__title">{{name}}</view>
+                    <view class="xx_text__des">ID：{{user_id}}</view>
+            </view>
+            <view class="xx_menu__node_descrtion" catchtap='toRosterSelf'>
+                <image   class="image_icon" src="{{icon_roster}}" style="margin-right:5px ;"  ></image>
+                名片
+            </view>
+        </view>
+    </view>
+
+     <view  style='height:10px;' ></view>   
+    <view class="xx_menu ">
+        <view catchtap="toMember" url="" class="xx_menu__node " hover-class="xx_active">
+            <view class="xx_menu__node_icon">
+                <image src="{{icon_vip}}"></image>
+            </view>
+            <view class="xx_menu__node_name">会员</view>
+            <view class=" xx_menu__node_access xx_text__right"></view>
+        </view>
+        <view catchtap="toMeetingSelf" url="" class="xx_menu__node " hover-class="xx_active">
+            <view class="xx_menu__node_icon">
+                <image src="{{icon_meet}}"></image>
+            </view>
+            <view class="xx_menu__node_name">活动</view>
+            <view class=" xx_menu__node_access xx_text__right"></view>
+        </view>
+    </view>
+
+
+     <view  style='height:10px;' ></view>   
+    <view class="xx_menu ">
+        <view catchtap="toDiscount" url="" class="xx_menu__node " hover-class="xx_active">
+            <view class="xx_menu__node_icon">
+                <image src="{{icon_discount}}"></image>
+            </view>
+            <view class="xx_menu__node_name">优惠券</view>
+            <view class=" xx_menu__node_access xx_text__right"></view>
+        </view>
+    </view>
+
+
+     <view  style='height:10px;' ></view>   
+    <view class="xx_menu ">
+        <view catchtap="toSearch" url="" class="xx_menu__node " hover-class="xx_active">
+            <view class="xx_menu__node_icon">
+                <image src="{{icon_search}}"></image>
+            </view>
+            <view class="xx_menu__node_name">搜索</view>
+            <view class=" xx_menu__node_access xx_text__right"></view>
+        </view>
+    </view>
+
+
+
+     <!-- <view class="cells ">
+        <navigator url="" catchtap="clickLogo" class="cell cell_access" hover-class="cell_active">
+            <view class="cell__hd">
+                 <view class="head_logo" >
+                    <image src="{{logo}}"></image>
+                </view>
+            </view>
+            <view class="cell__bd user_name">
+                <view class="classname">{{name}}</view>
+                <view class="uid">ID：{{user_id}}</view>
+            </view>   
+        </navigator>
+    </view> 
+
+
+    <view class="cells ">
+        <navigator catchtap="toMember" url="" class="cell cell_access" hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon1}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">我的会员</view>
+            <view class="cell__ft cell__ft_in-access"></view>
+        </navigator>
+         我的会员  图片版 
+           <navigator catchtap="toMember" url="" class="cell_member cell_access" hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon1}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">我的会员</view>
+            <view class="cell__ft cell__ft_in-access">
+                 <image src="../../images/member_super_vip_icon.png" class="card"></image> 
+            </view>
+        </navigator> 
+         <view class="bottom-border "></view>
+          <navigator catchtap="toRosterSelf"  url="" class="cell cell_access " hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon_roster}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">我的商圈</view>
+            <view class="cell__ft cell__ft_in-access"></view>
+        </navigator>   
+          <view class="bottom-border "></view> 
+            <navigator catchtap="toMeetingSelf"  url="" class="cell cell_access " hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon2}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">已报名会议</view>
+            <view class="cell__ft cell__ft_in-access"></view>
+        </navigator> 
+      
+    </view>
+    <view class="cells ">
+         
+         <navigator catchtap="toOrder"  url="" class="cell cell_access " hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon2}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">订单</view>
+            <view class="cell__ft cell__ft_in-access"></view>
+        </navigator>
+        <view class="bottom-border "></view>  
+        <navigator catchtap="toDiscount"  url="" class="cell cell_access" hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon3}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">优惠券</view>
+            <view class="cell__ft cell__ft_in-access"></view>
+        </navigator>
+        
+         <view class="bottom-border "></view>
+        <navigator catchtap="toHistory"  url="" class="cell cell_access" hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon4}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">历史</view>
+            <view class="cell__ft cell__ft_in-access"></view>
+        </navigator> 
+    </view>
+    <view class="cells ">
+        
+        <navigator catchtap="toSearch"  url="" class="cell cell_access" hover-class="cell_active">
+            <view class="icon_box">
+                <image src="{{icon5}}" class="icon"></image>
+            </view>
+            <view class="cell__bd">搜索</view>
+            <view class="cell__ft cell__ft_in-access"></view>
+        </navigator>
+    </view>
+    
+    <view class="footer_title">温馨提示</view>
+    <view class="footer">"华讯生物圈"是广西华讯信息技术股份有限公司自行研发并拥有自主知识产权的微信小程序</view> -->
+</view>
+

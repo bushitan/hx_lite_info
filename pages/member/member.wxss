@@ -1,0 +1,140 @@
+/* pages/member/member.wxss */
+
+.during_date {
+    margin: 0 0 8px;
+}
+
+
+.icon_vip{
+    width: 16px;
+    height: 16px;
+}
+
+
+
+.d{
+    /* background-color: #fff; */
+    width: 700rpx;
+    margin: 20px auto;
+    border-radius: 5px;
+    /* box-shadow: 0 0 10px #B7B7B7; */
+    box-shadow:0px 2px 5px #efefef;
+}
+.d1{
+    display: flex;
+    justify-content: space-between ;
+    /* align-items: center ;
+    align-content:flex-end; */
+     align-items:flex-end;
+    color: #fff;
+    width: 700rpx;
+    height:394rpx;
+    z-index: 1000;
+    border-radius: 15px; 
+    /* border-top-left-radius: 15px;  */
+    /* border-top-right-radius: 15px;  */
+    
+}
+.d1_1{
+    margin-bottom:90rpx; 
+}
+.vip_name{
+    margin-left: 40rpx;
+    font-size: 100rpx;
+    font-weight: bold;
+    color: #676767;
+    font-style: italic
+
+}
+.vip_footer{
+    margin-left: 40rpx;
+    font-size: 20rpx;
+    color: #676767;
+
+}
+
+
+label{
+    margin: 0 10px 0 15px;
+}
+.tag_name{
+    margin: 0;
+    font-weight: bold;
+    font-size:28rpx; 
+}
+
+.dialog{
+    margin: 15px;
+    text-align: center;
+    font-size: 11pt;
+    color: #b2b2b2;
+}
+button{
+    /* padding-left:15px;
+    padding-right:15px; */
+    margin: 20px;
+}
+
+
+
+.s{
+    /* background-color: #fff; */
+    width: 700rpx;
+    margin: 20px auto;
+    border-radius: 5px;
+    
+    box-shadow: 0 0 10px #B7B7B7;
+}
+.s1{
+     display: flex;
+    justify-content: space-between ; 
+    /* align-items: center ;
+    align-content:flex-end; */
+     /* align-items:flex-end; */
+    color: #fff;
+    width: 700rpx;
+    height:394rpx;
+    z-index: 1000;
+    border-radius: 15px; 
+    /* border-top-left-radius: 15px;  */
+    /* border-top-right-radius: 15px;  */
+    
+}
+.s1_1{
+    margin:25rpx 50rpx 0 0; 
+}
+
+.super_vip_name{
+    /* margin-left: 40rpx; */
+    font-size: 100rpx;
+    font-weight: bold;
+    color: #e3b91e;
+    /* text-align: right; */
+    /* font-style: italic */
+
+}
+.super_vip_footer{
+    /* margin-left: 40rpx; */
+    font-size: 20rpx;
+    color: #e3b91e;
+
+}
+
+.super_vip_image{
+    position: absolute;
+    width: 700rpx;
+    height:394rpx;
+    border-radius: 5px; 
+    z-index: -1000;
+}
+
+.vip_image{
+    position: absolute;
+    width: 700rpx;
+    height:394rpx;
+    border-radius: 5px; 
+    z-index: -1000;
+}
+.renew_top{
+    margin-top: 15px !important
+}

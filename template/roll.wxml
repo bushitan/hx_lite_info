@@ -1,0 +1,63 @@
+
+
+<!-- 左边图片，右边文字 -->
+<template name="roll__img_text">
+    <block wx:for="{{articleList}}" >
+        <view wx:if="{{item.is_banner == 0}}" 
+        class="media-box"
+        catchtap="checkArticle" data-article_id="{{item.article_id}}" data-role_value="{{item.role_value}}">       
+            <view class="history__box" >
+                <view class="h_img" hidden='{{item.cover == "" ? true:false}}'>
+                    <image class="history__img " src="{{item.cover}}" ></image>
+                </view>
+                <view class="{{item.cover == '' ? 'width_718':'width_471'}}">
+                    <view class="history__title {{item.cover == '' ? 'max_718':'max_471'}}">
+                        {{item.title}}                        
+                    </view>
+                    <!-- <view class="history__des {{item.cover == '' ? 'max_718':'max_471'}}">
+                        {{item.subtitle}}
+                    </view> -->
+                    <view class="history__footer {{item.cover == '' ? 'width_718':'width_471'}}">
+                        <label> <label class="read">阅读</label> {{item.click_rate}}</label>
+                        <label> {{item.issue_time}}</label> 
+                    </view> 
+                </view>
+            </view>
+            
+            <!-- <view class="history__footer">
+              <label> <label class="read">阅读</label> {{item.click_rate}}</label>
+              <label> {{item.issue_time}}</label> 
+            </view>  -->
+        </view>
+        <view wx:if="{{item.is_banner == 1}}"  class="banner" catchtap="bannerToArticle" data-article_id="{{item.article_id}}">
+            <image  src="{{item.cover}}"></image>
+        </view>
+    </block>
+
+    <template is="loading" data="{{isMore:isMore}}"/> 
+     
+</template>
+
+
+<!-- mode="aspectFit"  -->
+
+
+
+<template name="loading">
+    <!-- 下拉提示 -->
+    <view wx:if="{{isMore}}">
+         <view class="page__bd">
+            <view class="weui-loadmore ">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+            </view>
+        </view>
+    </view>   
+     <view wx:else>
+         <view >
+            <view class="weui-loadmore weui-loadmore_line">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无更多数据</view>
+            </view>
+        </view>
+    </view>
+</template>

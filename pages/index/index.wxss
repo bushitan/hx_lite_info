@@ -1,0 +1,69 @@
+/**index.wxss**/
+
+.scroll_view_y{
+    height: 100vh;
+}
+
+.scroll-view_tab{
+    width:750rpx;
+    /* height:42px; */
+    /* line-height: 42px; */
+    white-space: nowrap; 
+    display: flex;    
+    text-align: center;
+    background-color:#ffffff; 
+    overflow:scroll;
+}
+
+
+
+
+
+
+swiper {
+    width: 750rpx;
+    height: 300rpx;
+    background-color: #fff;
+}
+swiper image{
+    width: 750rpx;
+    height: 300rpx;
+}
+.shortcut {
+    /* position: fixed; */
+    background-color:#ffffff; 
+    display: flex;
+    justify-content:space-around;
+    z-index: 1000;
+    /* border-bottom:1rpx solid #E5E5E5; */
+    /* box-shadow: 0 0 10px #B7B7B7; */
+}
+ .select{
+     background-color: #eee;
+     /* color: #fff; */
+    /* font-size:15px;
+    padding: 8px 12px ; 
+    color: #187bbf;
+    border-bottom:2px solid #187bbf; */
+}
+ .unselect{
+    /* color: #c0c0c0;
+    border-bottom: 0px; */
+}
+
+
+.space-42{
+    height:42px
+}
+
+
+.space-4{
+    height:4px
+}
+
+
+.r_border{
+    font-size:15px;
+    padding: 8px 12px ; 
+    border-right:1rpx solid #eee;
+}

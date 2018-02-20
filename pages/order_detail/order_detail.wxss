@@ -1,0 +1,97 @@
+
+
+
+
+.title {
+    background-color: #fff;
+    font-size: 14pt;
+    margin-bottom:20px;
+    padding: 15px 15px;
+    border-bottom: 1rpx solid #D9D9D9;  
+    display: flex;
+    align-items:center ;
+}
+.title image{
+    width: 30px;
+    height: 30px;
+    margin-right:5px; 
+}
+
+
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+
+.pay_false {
+    color: red;
+}
+
+.pay_true {
+    color: #3CC51F;
+}
+
+.pay_box{
+    position:relative;
+
+}
+.pay_box::after {
+    /* position:absolute; */
+    left:0;
+    bottom:0;
+    right:0;
+    height:1px;
+    border-bottom:1rpx solid #E5E5E5;
+    color:#E5E5E5;
+}
+.pay_box::before {
+    content:" ";
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    height:1px;
+    border-top:1rpx solid #E5E5E5;
+    color:#E5E5E5;
+
+}
+.list_title {
+padding:14px 15px 10px;
+color:#999999;
+font-size:13px;
+position:relative;
+display:flex;
+justify-content:space-between;
+background-color:#FFFFFF;
+}
+.list_title::after {
+    content:" ";
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    height:1px;
+    /* border-bottom:1rpx solid #E5E5E5; */
+    color:#E5E5E5;
+    left:15px;
+
+}
+
+.list_content {
+
+      background-color:#f8f8f8;  
+}
+
+.color_blue {
+    color: #3bb4ed
+}
+
+.color_yellow {
+    color: #fdbf08
+}
+.icon_vip{
+    width: 16px;
+    height: 16px;
+    line-height: 28px;
+    margin: auto;
+}
+

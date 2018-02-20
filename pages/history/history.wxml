@@ -1,0 +1,20 @@
+<!--pages/together/together.wxml-->
+<view class="page"  >
+    <scroll-view style="height: {{windowHeight}}px;"  scroll-y="true" bindscrolltolower="scrollBottom" > 
+   <!-- <view  class="panel"> -->
+        <view class="panel__hd white">
+            <label class="">浏览记录</label>
+            <label class="history_filter weui-cell__ft_in-access" catchtap="historyFilter">{{filter}}</label>
+        </view>
+        <view class="bottom-border "></view>
+        <view class="">
+            <import src="../../waterfall/waterfall.wxml"/>
+            <template is="waterfall" data="{{artList: artList}}"/>
+        </view>
+    <!-- </view> -->
+ 
+    </scroll-view> 
+   
+</view>
+
+ 

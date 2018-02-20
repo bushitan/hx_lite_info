@@ -1,0 +1,44 @@
+/* example/input/input.wxss */
+
+
+.font_red{
+    color: red;
+}
+.font_blue{
+    color: #187bbf;
+}
+.pt{
+    
+    /* font-size: 9pt !important; */
+}
+
+.flex{
+    display: flex
+}
+
+
+.input_des {
+    font-size:9pt;
+    margin:9pt 5px 9pt 0;
+    display:flex;
+    align-items:center;
+
+}
+.input{
+    font-size:9pt !important;
+    display:flex;
+    align-items:center;
+
+    height: auto !important;
+}
+
+
+.save{
+    margin: 30px 15px;
+    padding: 12pt 15px; 
+    color:#FFFFFF;
+    background-color:#1AAD19;
+    text-align: center;
+    font-size: 11pt;
+    line-height: 11pt;
+}

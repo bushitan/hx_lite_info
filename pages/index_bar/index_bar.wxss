@@ -1,0 +1,20 @@
+/* pages/index_bar/index_bar.wxss */
+.flex_center{
+    display: flex;
+    justify-content:  center ;
+     align-items: center;
+}
+
+image{
+    width: 64px;
+    height: 64px;
+}
+
+.tag_name{
+    text-align: center;
+    font-size: 15pt;
+    line-height: 64px;
+    margin:20px 30px; 
+    background-color: #eee;
+    color: #b8b8b8;
+}

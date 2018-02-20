@@ -1,0 +1,128 @@
+<view class="page" >
+    
+    
+    <view class='xx_mark'>
+        <view class='xx_mark__title_border ' >个人信息填写</view>
+    </view>
+    <!-- <view class='xx_line__gray'></view> -->
+    <view style="height:10px"></view>
+
+    <view class="xx_input ">
+        <view class="xx_input__node ">
+            <view >
+                    <view class="xx_input__name ">我的姓名</view>
+            </view>
+            <view class='xx_input__line'>
+                <input class="" placeholder="请输入姓名" bindinput="inputName" value='{{roster.user_name}}' />
+            </view>
+        </view>
+        <view class='xx_line__gray'></view> 
+
+        <view class="xx_input__node ">
+            <view >
+                    <view class="xx_input__name ">手机号码</view>
+            </view>
+            <view class='xx_input__line'>
+                <input class="" placeholder="请输入号码" bindinput="inputPhone" value="{{roster.phone}}"/>
+            </view>
+        </view>
+        <view class='xx_line__gray'></view> 
+
+        <view class="xx_input__node ">
+            <view >
+                    <view class="xx_input__name ">个性签名</view>
+            </view>
+            <view class='xx_input__area'> 
+                <textarea class="" placeholder="请输入简介 （200字以内）"   placeholder-class="xx_input__placeholder"  
+                value="{{roster.introduction}}"  bindinput="inputContent" />
+            </view> 
+        </view>
+        <view class='xx_line__gray'></view> 
+        <view class="xx_input__node">
+            <view hover-class='xx_active'>
+                    <view class="xx_input__name    xx_text__color_primary" catchtap='getCompanyLocation'>公司地址</view>
+            </view>
+            <view class='xx_input__line'>
+                <input class="" placeholder="点击左侧绿色按钮，获取地址" placeholder-class="xx_input__placeholder"  
+                value="{{roster.address}}"  bindinput="inputAddress" />
+            </view>
+        </view>
+
+    </view>
+
+    <view class="xx_button__hx" hover-class='xx_button__hx_press' bindtap="setSelf">保存</view>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <view class="page__hd">
+        <view class="page__title">商圈信息填写</view>
+        <view class="page__desc">已经注册的会员，填写的信息将在商圈内展示</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+
+
+        <view class="weui-cells__title">我的姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入文本" value="{{roster.user_name}}" bindinput="inputName" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">我的简介</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入文本" value="{{roster.introduction}}"  style="height: 3.3em" bindinput="inputContent" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">手机号码</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                 <view class="weui-cell__hd" style="width: 105px">
+                    <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+                        <view class="weui-select">{{countryCodes[countryCodeIndex]}}</view>
+                    </picker>
+                </view> 
+                <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                    <input class="weui-input" placeholder="请输入号码"  value="{{roster.phone}}"  bindinput="inputPhone"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">公司地址</view> 
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input weui-cell_vcode">
+                        <view class="weui-cell__bd">
+                             <label  class="weui-input" style='color:#888'>点击右侧按钮获取地址</label> 
+                             <input class="weui-input" placeholder="点击右侧按钮获取地址"  value="{{roster.address}}"  /> 
+                        </view>
+                        <view class="weui-cell__ft">
+                            <view class="weui-vcode-btn"  catchtap='getCompanyLocation'>获取地址</view>
+                        </view>
+                    </view>
+        </view>
+        <view class="weui-btn-area">
+                <button class="weui-btn" type="" catchtap='showCompanyLocation'  >预览位置</button>
+        </view> 
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="setSelf">设置</button>
+        </view>
+    </view> -->
+</view>
+
+
+

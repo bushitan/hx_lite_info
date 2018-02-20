@@ -1,0 +1,68 @@
+<view class="page" >
+    <scroll-view class='scroll_view_y'  scroll-y="true" bindscrolltolower="scrollBottom" > 
+        <!-- 滚动栏 -->
+        <view class="">
+            <swiper 
+            autoplay="true" interval="5000" duration="1000"
+            indicator-dots="true"
+            indicator-color="rgba(255, 255, 255, .3)" 
+            indicator-active-color="rgba(88, 88, 88, .6)" 
+            circular="true"	>
+            <block wx:for="{{swiperList}}">
+                <swiper-item>
+                    <image src="{{item.cover}}" class="slide-image" mode="aspectFit"
+                    catchtap="bannerToArticle" data-article_id="{{item.article_id}}"/>
+                </swiper-item>
+            </block>
+            </swiper>
+        </view>
+        
+        <view class= style='margin-bottom:1rpx' ></view>  
+
+        <scroll-view scroll-x="true" class='scroll-view_tab'>
+            <view class='xx_flex  xx_bg__white'>
+              
+                <block wx:for="{{showSonTagList}}">
+                    <view class='xx_tab'>
+                        <view class="xx_tab__node   {{sonTagID == item.tag_id?'xx_tab__select':''}} "
+                         catchtap="clickTag" data-tag_id="{{item.tag_id}}" data-tag_name="{{item.tag_name}}">
+                            {{item.tag_name}}
+                        </view>
+                    </view>
+                </block>
+                  <view class='xx_tab ' hover-class='xx_active'  catchtap="toFatherTagChoice" >
+                    <view class='xx_tab__node'>
+                        <!-- {{showFatherTagName}} -->
+                        行业
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+         <view class= style='margin-bottom:1px' ></view>  
+
+        <!-- 文章展示瀑布流 -->
+        <view class="art_list" >
+            <import src="../../template/list.wxml"/>
+            <template is="list_info" data="{{articleList: articleList,isMore:isMore}}"/> 
+            <template is="loading" data="{{isMore:isMore}}"/> 
+        </view> 
+    </scroll-view> 
+</view>
+
+
+
+
+
+        <!-- 标签 -->
+        <!-- <view class="shortcut">
+            <scroll-view scroll-x="true" >
+                <label class="word r_border" catchtap="toFatherTagChoice" data-tag_id="{{item.id}}" data-tag_name="{{item.name}}" >{{showFatherTagName}}</label>
+                <block wx:for="{{showSonTagList}}">
+                    <label class="word {{sonTagID == item.tag_id?'select':''}} "  
+                    catchtap="clickTag" data-tag_id="{{item.tag_id}}" data-tag_name="{{item.tag_name}}" >{{item.tag_name}}</label>
+                </block>
+            </scroll-view>
+        </view> -->
+
+           <!-- <import src="../../template/roll.wxml"/>
+            <template is="roll__img_text" data="{{articleList: articleList,isMore:isMore}}"/>  -->

@@ -1,0 +1,93 @@
+<view class="page">
+
+    <view wx:if="{{order_list.length == 0}}" class="dialog" >温馨提示：您还没有支付订单记录</view>
+    <view class="dialog" wx:else>温馨提示：点击付款可查看更详细的信息</view>
+    
+    <block wx:for="{{order_list}}">
+        <view class="time">
+            <label>{{item.create_time}}</label>
+        </view>
+        <view class="order" catchtap="toOrderDetail">
+            <view class="o1" wx:if="{{item.agreement_type == AGREEMENT_TYPE_MEMBER}}">
+                <image src="../../images/mine_fill.png"></image> 会员
+            </view>
+            <view class="o1" wx:else>
+                <image src="../../images/single.png"></image> 点播
+            </view>
+            <view class="o2">
+                <view class="o2_1">付款金额</view>
+                <view class="o2_2">￥{{item.payment_fee}}</view>   
+            </view>
+            <view class="bottom-border "></view>
+            <view class="o3 cell__ft_in-access" >
+            查看账单
+            </view>
+        </view>
+    </block>
+    
+    <!-- <view  class="pay_box ">
+        <view class="list_title">
+            <label class="">订单列表</label>
+            <label class="history_filter weui-cell__ft_in-access" catchtap="Filter">{{filter}}</label>
+      </view>
+            <block wx:for="{{order_list}}">
+                <view class="weui-form-preview" >
+                    <view class="weui-form-preview__hd">
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">付款金额</view>
+                            <view class="weui-form-preview__value_in-hd">¥{{item.payment_fee}}</view>
+                        </view>
+                    </view>
+                    <view class="weui-form-preview__bd">
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">支付状态</view>
+                            <view class="weui-form-preview__value pay_true">已支付</view>
+                        </view>
+                       
+                        <view wx:if="{{item.agreement_type == AGREEMENT_TYPE_MEMBER}}">
+                            <view class="weui-form-preview__item">
+                                <view class="weui-form-preview__label">类别</view>
+                                <view class="weui-form-preview__value color_yellow">会员</view>
+                            </view>
+
+                            <view class="weui-form-preview__item">
+                                <view class="weui-form-preview__label">所属网站</view>
+                                <view class="weui-form-preview__value">{{item.tag_name}}</view>
+                            </view>
+                            <view class="weui-form-preview__item">
+                                <view class="weui-form-preview__label">会员等级</view>
+                                <view class="weui-form-preview__value">
+                                    <image wx:if="{{item.role_id == ROLE_VIP_ID}}"  class="icon_vip" src="{{iconVip}}"></image>
+                                    <image wx:if="{{item.role_id == ROLE_SUPER_VIP_ID}}" class="icon_vip" src="{{iconSuperVip}}"></image> 
+                                    {{item.role_name}}
+                                </view>
+                            </view>
+                        </view>
+
+                        <view  wx:else>
+                            <view class="weui-form-preview__item">
+                                <view class="weui-form-preview__label ">类别</view>
+                                <view class="weui-form-preview__value color_blue">点播</view>
+                            </view>
+                            <view class="weui-form-preview__item" >
+                                <view class="weui-form-preview__label">文章标题</view>
+                                <view class="weui-form-preview__value">{{item.article_name}}</view>
+                            </view> 
+                        </view>
+                        <view class="weui-form-preview__item">
+                            <view class="weui-form-preview__label">创建时间</view>
+                             <view class="weui-form-preview__value">{{item.create_time}}</view>
+                        </view>
+                    </view>
+                </view>
+            
+            </block>
+            <view wx:if="{{order_list.length == 0}}" class="weui-media-box weui-media-box_text" >
+                <view class=" weui-media-box__title weui-media-box__title_in-text">
+                    您还没有支付订单记录
+                </view>
+                
+            </view>
+
+    </view> -->
+</view>

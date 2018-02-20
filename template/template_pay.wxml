@@ -1,0 +1,129 @@
+
+
+
+
+
+
+
+
+
+
+<!-- 会员pre订单显示 -->
+<template name="pre_member">
+    <view class="head">
+        <icon type="cancel" catchtap="closeDiscount"/>
+        <view class=""><label>会员支付</label></view>
+    </view>
+    <view class="origin">
+        <view class="classname">{{ orderDict.tag_name }}</view>
+        <view class="classname">{{ orderDict.role_name }}</view>
+        <view class="classname">
+            共<label>{{orderDict.original_fee}}</label>元
+        </view>
+    </view>
+</template>
+
+<!-- 点播pre订单显示 -->
+<template name="pre_single">
+    <view class="head">
+        <icon type="cancel" catchtap="closeDiscount"/>
+        <view class=""><label>我就看这篇</label></view>
+    </view>
+    <view class="origin">
+        <view class="classname">支付文章</view>
+        <view class="classname">{{articleTitle}}</view>
+        <view class="classname">
+            共<label>{{orderDict.original_fee}}</label>元
+        </view>
+    </view>
+</template>
+
+
+
+<template name="pay_order_member">
+        <view class="shade"></view>
+        <view class="order">
+            <template is="pre_member"   data="{{orderDict : orderDict}}"/> 
+            <picker bindchange="bindDiscountChange" value="{{discountIndex}}" range="{{discountList}}" range-key="discount_name">
+            <view class="discount">
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label" wx:if="{{discountList.length == 0}}">暂无优惠券</view>
+                        <view class="weui-label" wx:else>优惠券抵扣</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                            <view class="picker-select weui-select_in-select-after">{{ discountList[discountIndex].discount_name }}</view>
+                    </view>
+                </view>
+            </view>
+            </picker>
+            <view class="protocol">
+                <checkbox-group bindchange="bindProtocolChange">
+                    <checkbox value='1' checked="true"></checkbox>
+                    <label class="word" catchtap='openProtocol' >同意注册协议</label>
+                </checkbox-group>
+            </view>
+            <view class="bottom_btn">
+                    <button catchtap="clickCreateOrder" disabled="{{isPayBtnDisable}}" type="primary" data-pay_mode=""> 
+                    微信支付￥
+                    <label wx:if="{{discountList.length == 0}}">{{orderDict.original_fee}}</label>
+                    <label wx:else>
+                        {{ orderDict.original_fee - discountList[discountIndex].discount_fee>0? orderDict.original_fee - discountList[discountIndex].discount_fee:0}}
+                    </label>
+                    元
+                    </button> 
+            </view>
+        </view>
+</template>
+
+
+<template name="pay_protocol">
+    <view class='title'>注册协议</view>
+    <view class='content'>
+    协议内容协
+    </view>
+        <button type="primary" catchtap='closeProtocol' >已知晓协议内容</button>
+</template>
+
+
+
+
+
+<!-- <template name="pay_order">
+    <view class="classname" hidden="{{!showOrder}}">
+        <view class="shade"></view>
+        <view class="order">
+            <template wx:if="{{styleOrder == STYLE_ORDER_MEMBER}}"  is="pre_member"   data="{{order : order}}"/>
+            <template wx:else is="pre_single"  data="{{order : order ,articleTitle:articleTitle}}"   />
+            <picker bindchange="bindDiscountChange" value="{{discountIndex}}" range="{{discountList}}" range-key="discount_name">
+            <view class="discount">
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label" wx:if="{{discountList.length == 0}}">暂无优惠券</view>
+                        <view class="weui-label" wx:else>优惠券抵扣</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                            <view class="picker-select weui-select_in-select-after">{{ discountList[discountIndex].discount_name }}</view>
+                    </view>
+                </view>
+            </view>
+            </picker>
+            <view class="protocol">
+                <checkbox-group bindchange="bindProtocolChange">
+                    <checkbox value='1' checked="true"></checkbox>
+                    <label class="word" catchtap='openProtocol' >同意注册协议</label>
+                </checkbox-group>
+            </view>
+            <view class="bottom_btn">
+                    <button catchtap="clickCreateOrder" disabled="{{isPayBtnDisable}}" type="primary" data-pay_mode=""> 
+                    微信支付￥
+                    <label wx:if="{{discountList.length == 0}}">{{order.original_fee}}</label>
+                    <label wx:else>
+                        {{ order.original_fee - discountList[discountIndex].discount_fee>0? order.original_fee - discountList[discountIndex].discount_fee:0}}
+                    </label>
+                    元
+                    </button> 
+            </view>
+        </view>
+    </view>
+</template> -->

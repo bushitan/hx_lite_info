@@ -1,0 +1,43 @@
+<view class="page">
+    <scroll-view class='roll__scroll_view'  scroll-y="true" bindscrolltolower="scrollBottom" > 
+
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                    <icon type="clear" size="14"></icon>
+                </view>
+            </view>
+        </view>
+        <view class="weui-search-bar__cancel-btn xx_text__color_hx"  catchtap="getSearch">搜索</view>
+    </view>
+    <view class='range'>
+        <view >选择时间范围:</view>
+        <view class='xx_text__color_hx' >  
+            <picker mode ="date" bindchange="clickStart">   
+                    {{dateStart}}
+            </picker>
+        </view>
+        <view>至</view>
+        <view class='xx_text__color_hx' catchtap='clickEnd'>
+            <picker mode ="date" bindchange="clickEnd"> 
+                    {{dateEnd}}
+            </picker>
+        </view>
+    </view>
+
+    <view  class="">
+        <!-- <view class="">
+            <import src="../../template/roll.wxml"/>
+            <template is="roll__img_text" data="{{articleList: articleList,isMore:isMore}}"/> 
+        </view> -->
+        
+        <import src="../../template/list.wxml"/>
+        <template is="list_info" data="{{articleList: articleList,isMore:isMore}}"/> 
+        <template is="loading" data="{{isMore:isMore}}"/> 
+    </view>
+    
+    </scroll-view> 
+</view>

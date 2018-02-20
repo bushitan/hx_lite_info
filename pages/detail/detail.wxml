@@ -1,0 +1,57 @@
+<view class="page">
+  
+
+<import src="../../wxParse/wxParse.wxml"/>
+
+  <view class="classname" >
+  
+
+    <!-- 标题 -->
+    <view class="art__title"  wx:if="{{article.is_show_title == SHOW }}">
+        <view class="title">{{article.title}}</view>
+    </view>
+    <!-- 摘要 来源 发布时间 -->
+    <view class="art__summary" wx:if="{{article.is_show_title == SHOW }}">
+        <label wx:if="{{article.summary != ''}}">{{article.summary}}</label>
+        <label wx:if="{{article.source != ''}}">{{article.source}}</label>
+        <label >{{article.issue_time}}</label>
+        <label >阅读 {{article.click_rate}}</label>
+    </view>
+     <!-- 音频 -->
+    <view class="art_audio" wx:if="{{article.is_show_audio == SHOW ? true:false}}"> 
+
+        <audio class="" poster="{{article.audio_poster}}" name="{{article.audio_name}}" author="{{article.audio_author}}" src="{{article.audio_src}}" id="myAudio" controls loop></audio>
+    </view> 
+    <!-- 视频 -->
+    <view class="art_video" wx:if="{{article.is_show_video == SHOW ? true:false}}"> 
+        <view class="video_des">
+            下方观看视频版，暂停、快进、倒退都没问题（和语音内容相同，选一个就行），继续往下拉还有文字版
+        </view>
+        <video id="myVideo" src="{{article.video_src}}" controls></video>
+    </view> 
+
+    <!-- 正文 -->
+     <view class="page__bd">
+        <view class="art__content" style="font-size:{{fontSize}}px; width:{{article.content_width-60}}rpx;"> 
+             <rich-text wx:if="{{useRichText == true}}" nodes="{{article.content}}" /> 
+             <template wx:else  is="wxParse" data="{{wxParseData:article_content.nodes}}"  />    
+        </view>
+     </view>
+     <view wx:if="{{share==true}}" style="margin:0 20px 20px;">
+        <button catchtap='toIndex'>返回首页</button>
+     </view>
+  </view> 
+
+
+    <view class='' wx:if="{{article.is_show_navigate == SHOW}}">
+        <view class="xx_button__hx" hover-class='xx_button__hx_press'>会议报名</view>
+    </view>
+    <view class="font_size" catchtap="fontSizeSwitch" wx:if="{{article.is_show_title == SHOW }}">
+        <label >字体</label>
+        <!-- <label class="title" wx:else>{{temp.emoticon.length}}</label> -->
+    </view>
+    <!-- <view class="next" catchtap="nextClick" wx:if="{{next.is_next == true && article.is_show_title == SHOW}}" >
+        <label  >下一篇:{{next.article_title}}</label>
+    </view> -->
+
+</view>

@@ -1,0 +1,55 @@
+<!--pages/together/together.wxml-->
+<view class="page"  >
+
+    <view class='xx_mark' wx:if="{{discount_list.length == 0}}" >
+        <view class='xx_mark__title_border ' >您的账户没有优惠券</view>
+    </view>
+     <view class='xx_mark' wx:else >
+        <view class='xx_mark__title_border ' >我的优惠券</view>
+    </view>
+    <!-- <view class="dialog">温馨提示：每笔支付仅限试用一张优惠券</view> -->
+    <block wx:for="{{discount_list}}">
+        <view class="d">
+            <view class="d1 {{item.agreement_type == AGREEMENT_TYPE_MEMBER?'member':'single'}}">
+                <image src="../../images/discount_yellow.png" class="vip_image" wx:if="{{item.agreement_type == AGREEMENT_TYPE_MEMBER}}"></image>
+                <image src="../../images/discount_blue.png" class="vip_image" wx:else></image>
+                <view class="d1_left">￥{{item.discount_fee}}</view>
+                <view class="d1_rigth">{{item.agreement_type == AGREEMENT_TYPE_MEMBER?'会员券':'点播券'}}</view>
+            </view>
+            <view class="d2">        
+                <view class="d2_1"><label>●</label>使用条件：{{item.use_condition}}</view>
+                <view class="d2_2"><label>●</label>使用范围：{{item.use_range}}</view>
+                <view class="d2_3"><label>●</label>有效期：{{item.start_time}}至{{item.end_time}}，过期失效</view>
+                <view class="d2_4"><label>●</label>说明：优惠券将在您结算的时候自动抵扣</view>
+            </view>
+        </view>
+    </block> 
+</view>
+
+
+
+
+
+<!-- <view class="weui-panel">
+            <view class="weui-panel__hd title">
+                <label class="">可用优惠券</label>
+                <label class="history_filter weui-cell__ft_in-access" catchtap="Filter">{{filter}}</label>
+            </view>
+            <view class="weui-panel__bd">
+                 <block wx:for="{{discount_list}}">
+                    <view class="weui-media-box weui-media-box_text">
+                        <view class="weui-media-box__title weui-media-box__title_in-text title">
+                            <label class="">{{item.name}}</label>
+                            <label class="color_yellow" wx:if="{{item.agreement_type == AGREEMENT_TYPE_MEMBER}}">会员券</label>
+                            <label class="color_blue" wx:else>点播券</label>
+                        </view>
+                        <view class="weui-media-box__desc">点播文章，享受{{item.summary}}元优惠</view>
+                        <view class="weui-media-box__info">
+                            <view class="">有效期:</view>
+                            <view class="weui-media-box__info__meta">开始：{{item.start_time}}</view>
+                            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">截止：{{item.end_time}}</view>
+                        </view>
+                    </view>
+                </block> 
+            </view>
+        </view>  -->

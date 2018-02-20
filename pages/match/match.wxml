@@ -1,0 +1,115 @@
+<!--pages/news/news.wxml-->
+<view class="page"  >
+    <scroll-view    scroll-y="true" bindscrolltolower="scrollBottom" > 
+        <!-- 菜单栏 -->
+        <view class="xx_menu ">
+            <view  url="" class="xx_menu__node " >
+                <view class="xx_menu__node_name xx_line__hx_left">{{showSonTagName}}</view>
+                <picker bindchange="sonChange"  range="{{fatherTag.match_list}}" range-key="tag_name">
+                  <view class=" xx_text__right xx_menu__node_mark xx_text__color_hx" hover-class='xx_active'>选择产品</view>
+                </picker>
+                <view class=" xx_text__right xx_menu__node_mark"  >|</view>
+                <view class=" xx_text__right xx_menu__node_mark xx_text__color_hx"  catchtap="choiceFilter" hover-class='xx_active'>{{filter}}</view>
+            </view>
+        </view>
+        <view class="">
+            <!-- <template is="roll__text" data="{{articleList: articleList,userID:userID,isMore:isMore}}"/> -->
+            <template is="card" data="{{articleList: articleList,userID:userID,isMore:isMore}}"/>
+            <import src="../../template/roll.wxml"/>
+            <template is="loading" data="{{isMore:isMore}}"/> 
+        </view>
+    </scroll-view> 
+
+    <view class="add_btn">
+        <view  catchtap="addNews">
+          我要发布
+            <!-- <image  src="../../images/ic_action_add.png" background-size="cover" catchtap="addNews"></image> -->
+        </view>
+    </view>
+    
+    <!-- 打开 供求的 标签列表 -->
+    <import src="../../template/tag_dialog.wxml"/>
+    <template is="tag_dialog" data="{{showDialog:showDialog,match_list:fatherTag.match_list}}"/> 
+    
+</view>
+
+<!-- 双列瀑布流 -->
+<template  name="card">
+    <view class='xx_card__roll_box'>
+        <view class='xx_card'>
+            <block wx:for="{{articleList}}" >
+                        <view class='xx_card__node'  wx:if="{{index%2 == 0}}">
+                                <template is="car_content" data="{{item:item,userID:userID}}"/> 
+                        </view>
+            </block>    
+        </view>
+        <view class='xx_card'>
+            <block wx:for="{{articleList}}" >
+                        <view class='xx_card__node' wx:if="{{index%2 == 1}}">
+                            <template is="car_content" data="{{item:item,userID:userID}}"/> 
+                        </view>
+            </block>    
+        </view>
+    </view>
+</template>
+
+<template name="car_content">
+    <view class='xx_card__title font_blue  xx_flex xx_flex__between' wx:if="{{item.is_buy == 1}}">
+        求购
+        <image hidden="{{item.phone == ''}}"  class="image_icon" src="../../images/phone.png" catchtap="phoneMatch" data-phone="{{item.phone}}"></image>
+    </view>
+    <view class='xx_card__title font_red xx_flex xx_flex__between' wx:else>
+        供应
+        <image  hidden="{{item.phone == ''}}"   class="image_icon" src="../../images/phone.png"  catchtap="phoneMatch" data-phone="{{item.phone}}"></image></view>
+    <view class='xx_card__content' style="font-weight: bold;">{{item.title}}</view>
+    <text class='xx_card__content'>{{item.content}}</text>
+    <view class='xx_card__content date'>{{item.issue_time}}</view>
+    <view 
+        catchtap='deleteMatchModal' 
+        data-match_id="{{item.match_id}}" 
+        class="delete"
+        wx:if="{{userID == item.user_id}}">
+        [我发的] 删除
+    </view>
+</template>
+
+
+
+
+
+<template name="roll__text">
+    <block wx:for="{{articleList}}" >
+         <view class="media-box"  >       
+            <view class="">
+                <view class="history__title "> 
+                    <view>
+                        <label wx:if="{{item.is_buy == 1}}" class="font_blue">[买入] </label>
+                        <label wx:else class="font_red">[卖出] </label>
+                        {{item.title}}
+                    </view>            
+                    <!-- <view> -->
+                    <image src='../../images/phone.png' catchtap="phoneMatch" data-phone="{{item.phone}}"></image>
+                        <!-- <icon type='success'></icon> -->
+                    <!-- </view>             -->
+                </view>
+                <view class="news__des ">
+                    <text space="true">
+                        内容：{{item.content}}
+                    </text>                    
+                </view>
+                <view class="history__footer ">
+                    <label> 
+                        <!-- 删除 -->
+                        <!-- <label catchtap='deleteMatchModal' data-match_id="{{item.article_id}}"  class="read font_blue" wx:if="{{userID == item.user_id}}">[我发的]删除</label>  -->
+                        {{item.click_rate}}
+                    </label> 
+                    <label> {{item.issue_time}}</label> 
+                </view> 
+            </view>
+        </view> 
+    </block>
+    
+   
+    <import src="../../template/roll.wxml"/>
+    <template is="loading" data="{{isMore:isMore}}"/> 
+</template>

@@ -1,0 +1,77 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/member/member",
+        "pages/my/my",
+        "pages/pay_renew/pay_renew",
+        "pages/pay/pay",
+        "pages/pay1/pay1",
+        "pages/match/match",
+        "pages/roster/roster",
+        "pages/match_input/match_input",
+        "pages/ztest/ztest",
+        "pages/index_bar/index_bar",
+        "pages/meeting_self/meeting_self",
+        "pages/roster_detail/roster_detail",
+        "pages/roster_self/roster_self",
+        "pages/meeting/meeting",
+        "pages/match_self/match_self",
+        "pages/history/history",
+        "pages/discount/discount",
+        "pages/order/order",
+        "pages/searchbar/searchbar",
+        "pages/order_detail/order_detail",
+        "pages/detail/detail"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#151515",
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "华讯生物圈",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": "false"
+    },
+    "tabBar": {
+        "backgroundColor": "#fcfcfc",
+        "color": "#b3b3b3",
+        "selectedColor": "#212121",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "快讯",
+                "iconPath": "images/info_unselect.png",
+                "selectedIconPath": "images/info_select.png"
+            },
+            {
+                "pagePath": "pages/match/match",
+                "text": "供求",
+                "iconPath": "images/match_unselect1.png",
+                "selectedIconPath": "images/match_select1.png"
+            },
+            {
+                "pagePath": "pages/roster/roster",
+                "text": "商圈",
+                "iconPath": "images/roster_unselect.png",
+                "selectedIconPath": "images/roster_select.png"
+            },
+            {
+                "pagePath": "pages/meeting/meeting",
+                "text": "活动",
+                "iconPath": "images/meet_unselect.png",
+                "selectedIconPath": "images/meet_select.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我",
+                "iconPath": "images/my_unselect.png",
+                "selectedIconPath": "images/my_select.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 30000,
+        "uploadFile": 30000,
+        "downloadFile": 15000
+    },
+    "debug": true
+}

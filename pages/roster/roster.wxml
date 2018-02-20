@@ -1,0 +1,101 @@
+<!--pages/news/news.wxml-->
+<view class="page"  >
+
+    <scroll-view  class='roll__scroll_view' scroll-y="true" bindscrolltolower="scrollBottom" > 
+        <!-- <view class="panel__hd white">
+            <label class="">花名册 </label>
+             <label class="history_filter weui-cell__ft_in-access" catchtap="choiceFilter">{{filter}}</label> 
+        </view> -->
+
+        <!-- xx_line__hx_left -->
+         <view class="xx_menu ">
+            <view  url="" class="xx_menu__node xx_flex__between" > 
+                <view class=" search   xx_line__hx_left">
+                    <view class="input_form">
+                        <view class="input_box">
+                            <input type="text" placeholder="公司、姓名" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                                <icon type="clear" size="14"></icon>
+                            </view>
+                            <icon class="btn_icon" catchtap="getSearch" type="search" size="14"></icon>
+                        </view>
+                    </view>
+                    
+                    <!-- <view class="btn xx_text__color_hx "  catchtap="getSearch">
+                      <icon class="btn_icon" type="search" size="14"></icon>
+                    </view> -->
+                </view>
+                <view class='xx_flex right_tab'>
+                  <view class=" xx_text__right xx_menu__node_mark xx_text__color_hx"  catchtap="getByAll" hover-class='xx_active'>全部</view>
+                    
+                    <view class=" xx_text__right xx_menu__node_mark"  >|</view>
+
+                    <picker bindchange="sellChange"  range="{{fatherTag.match_list}}" range-key="tag_name">
+                      <view class=" xx_text__right xx_menu__node_mark xx_text__color_hx"  hover-class='xx_active'>供应</view>
+                    </picker>
+                    <view class=" xx_text__right xx_menu__node_mark"  >|</view>
+                    
+                    <picker bindchange="buyChange"  range="{{fatherTag.match_list}}" range-key="tag_name">
+                      <view class=" xx_text__right xx_menu__node_mark xx_text__color_hx"   hover-class='xx_active'>求购</view>
+                    </picker>
+                    <view class=" xx_text__right xx_menu__node_mark"  >|</view>
+
+
+                    <picker bindchange="areaChange"  range="{{areaList}}" range-key="area_name">
+                      <view class=" xx_text__right xx_menu__node_mark xx_text__color_hx"  hover-class='xx_active'>地区</view>
+                    </picker>
+                    
+                </view>
+            </view>
+        </view>
+
+        <!-- 花名册表 -->
+        <view class="">
+            <import src="../../template/roll.wxml"/>
+            <template is="list_vip" data="{{articleList: articleList}}" wx:if="{{checkMember==true}}"/>
+            <template is="list_normal" data="{{articleList: articleList}}" wx:else/>
+            <template is="loading" data="{{isMore:isMore}}"/> 
+        </view>
+    </scroll-view> 
+
+</view>
+
+<!-- vip用户 -->
+ <template name="list_vip">
+    <block wx:for="{{articleList}}" >
+        <view class='xx_list ' catchtap="toRosterDetail" data-id="{{item.roster_id}}">
+            <view class='xx_list__node xx_flex'>
+                <view class='xx_list__logo'  hidden='{{item.cover == "" ? true:false}}'>
+                    <image  src="{{item.user_logo}}" mode="aspectFit"></image>
+                </view>
+                <view>
+                    <!-- <view class='xx_list__title '>{{item.user_name}}</view> -->
+                    <view class='xx_list__title '>{{item.user_name}}</view>
+                    <view class='xx_list__summery '>{{item.company_name}}</view>
+                    <view class='match ' wx:if="{{item.sell != ''}}">供应：{{item.sell}}</view>
+                    <view class='match ' wx:if="{{item.buy != ''}}">求购：{{item.buy}}</view>
+                </view>
+            </view>
+             <view class='xx_line__gray'></view> 
+        </view>
+    </block>
+</template>
+
+<!-- 一般用户 -->
+ <template name="list_normal">
+    <block wx:for="{{articleList}}" >
+        <view class='xx_list ' catchtap="toRosterDetail" data-id="{{item.roster_id}}">
+            <view class='xx_list__node xx_flex'>
+                <view class='xx_list__logo'  hidden='{{item.cover == "" ? true:false}}'>
+                    <image  src="{{item.user_logo}}" mode="aspectFit"></image>
+                </view>
+                <view>
+                    <view class='xx_list__title '>经理</view>
+                     <view class='xx_list__summery '>{{item.company_name}}</view> 
+                </view>
+            </view>
+             <view class='xx_line__gray'></view> 
+        </view>
+    </block>
+</template>
+

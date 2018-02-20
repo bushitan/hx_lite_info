@@ -1,0 +1,139 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wx51930c31391cc5cc",
+	"projectname": "%E5%8D%8E%E8%AE%AF%E7%94%9F%E7%89%A9%E5%9C%88",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "文章 分享",
+					"pathName": "pages/detail/detail",
+					"query": "art_id=480&share=1",
+					"scene": "1036",
+					"referrerInfo": {
+						"appId": "wx51930c31391cc5cc"
+					}
+				},
+				{
+					"id": 2,
+					"name": "index",
+					"pathName": "pages/index_bar/index_bar",
+					"query": "index_father_tag_id=1"
+				},
+				{
+					"id": 3,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "default_tag_id=1"
+				},
+				{
+					"id": -1,
+					"name": "meet",
+					"pathName": "pages/meeting/meeting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "roster",
+					"pathName": "pages/roster/roster",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/searchbar/searchbar",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "match",
+					"pathName": "pages/match/match",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "discount",
+					"pathName": "pages/discount/discount",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "roster_detal",
+					"pathName": "pages/roster_detail/roster_detail",
+					"query": "roster_id=14"
+				},
+				{
+					"id": -1,
+					"name": "roster_self",
+					"pathName": "pages/roster_self/roster_self",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "match_input",
+					"pathName": "pages/match_input/match_input",
+					"query": "roster_id=14"
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/ztest/ztest",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "文章id 65",
+					"pathName": "pages/detail/detail",
+					"query": "art_id=65"
+				},
+				{
+					"id": 14,
+					"name": "pay 原版",
+					"pathName": "pages/pay/pay",
+					"query": ""
+				},
+				{
+					"id": 15,
+					"name": "pay 增加会员",
+					"pathName": "pages/pay/pay",
+					"query": "article_id=216"
+				},
+				{
+					"id": 16,
+					"name": "pay 续费",
+					"pathName": "pages/pay_renew/pay_renew",
+					"query": ""
+				}
+			]
+		}
+	}
+}

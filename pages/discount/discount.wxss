@@ -1,0 +1,93 @@
+/* example/panel/panel.wxss */
+.title{
+
+display:flex;
+justify-content:space-between;
+
+}
+.color_blue, .color_yellow{
+    font-size: 14px;
+}
+.color_blue {
+    color: #3bb4ed
+}
+
+.color_yellow {
+    color: #fdbf08
+}
+
+/* 
+.member{
+     background-image: url("../../images/discount_yellow.png");
+     background-repeat: no-repeat;
+     background-size:100%;
+}
+
+.single{
+     background-image: url("../../images/discount_blue.png");
+     background-repeat: no-repeat;
+     background-size:100%;
+} */
+
+.d{
+      /* background-color: #fff;   */
+    width: 700rpx;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #B7B7B7;
+    /* z-index: -1000; */
+}
+.d1{
+
+    display: flex;
+    justify-content: space-between ;
+    align-items: center ;
+    color: #fff;
+
+    width: 700rpx;
+    height:196rpx;
+    z-index: 1000;
+    /* border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;  */
+    /* border-radius: 15px;  */
+}
+
+.d1_left{
+    margin-left: 20px;
+    font-size: 20pt;
+    font-weight: bold;
+}
+.d1_rigth{
+    margin-right: 20px;
+    font-size: 14pt;
+}
+
+.d2{
+      background-color: #fff;  
+    padding: 15px;
+    font-size: 9pt;
+    color: #b2b2b2;
+    
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+}
+label{
+    margin: 0 10px 0 15px;
+}
+
+.dialog{
+    margin: 15px;
+    text-align: center;
+    font-size: 11pt;
+    color: #b2b2b2;
+}
+
+.vip_image{
+    background-color: #fff;  
+    position: absolute;
+    width: 700rpx;
+    height:196rpx;
+    z-index: -1000;
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+}

@@ -1,0 +1,162 @@
+<!--pages/ztest/ztest.wxml-->
+
+<!-- tab选择按钮 -->
+<view class='xx_flex'>
+    <view class='xx_tab'>
+        <view class='xx_tab__node xx_tab__select'>
+            今日快婿
+        </view>
+    </view>
+</view>
+
+<!-- 公司标题 -->
+ <view class='xx_mark'>
+    <view class='xx_mark__title_border ' >会议、培训</view>
+</view>
+
+ <!-- 文章内容 -->
+ <view class='xx_article'>
+    <view class='xx_article__title_important'>标题</view>
+    <view class='xx_article__content'>李瑞光：年轻人愿意付钱 高端内容支付模式在中国非常流行李瑞光：年轻
+    人愿意付钱 高端内容支付模式在中国非常流行</view>
+    <view class='xx_article__title_border'>公司简介</view>
+    <view class='xx_article__content'>李瑞光：年轻人愿意付钱 高端内容支付模式在中国非常流行李瑞光：年轻
+    人愿意付钱 高端内容支付模式在中国非常流行</view>
+</view> 
+
+
+
+<!-- 文章 资讯 -->
+<view class='xx_list'>
+    <view class='xx_flex xx_list__node'>
+        <view>
+            <view class='xx_list__title'>李瑞光：年轻人愿意付钱 高端内容支付模式在中国非常流行</view>
+            <view class='xx_list__time'>2017-12-08 12:38:42</view>
+        </view>
+        <view class='xx_list__image'>
+            <image></image>
+        </view>
+    </view>
+    <view class='xx_line__gray'></view>
+</view>
+
+
+<!-- 文章 海报 -->
+ <view class='xx_list'>
+    <view class='xx_list__node'>
+        <view class='xx_list__cover'>
+            <image></image>
+        </view>
+        <view>
+            <view class='xx_list__title xx_text__center'>李瑞光：年轻人愿意付钱 高端内容支付模式在中国非常流行</view>
+            <view class='xx_list__time xx_text__right'>2017-12-08 12:38:42</view>
+        </view>
+    </view>
+    <view class='xx_line__gray'></view>
+</view> 
+
+
+<!-- 文章 人物介绍 -->
+<view class='xx_list '>
+    <view class='xx_list__node xx_flex'>
+        <view class='xx_list__logo'>
+            <image></image>
+        </view>
+        <view>
+            <view class='xx_list__title '>H.E YOUFHDUSI</view>
+            <view class='xx_list__title '>阿尔-白婷</view>
+            <view class='xx_list__summery '>副董事长兼助力</view>
+            <view class='xx_list__summery '>壳牌石油公司</view>
+        </view>
+    </view>
+    <!-- <view class='xx_line__gray'></view> -->
+</view>
+
+
+<!-- 菜单栏 -->
+<view class="xx_menu ">
+    <view catchtap="toMember" url="" class="xx_menu__node " hover-class="xx_active">
+        <view class="xx_menu__node_icon">
+            <image src="../../images/phone.png"></image>
+        </view>
+        <view class="xx_menu__node_name">我的会员</view>
+        <view class=" xx_menu__node_access xx_text__right"></view>
+    </view>
+    <view class='xx_line__gray'></view>
+    <view catchtap="toMember" url="" class="xx_menu__node ">
+        <view class="xx_menu__node_logo">
+            <image src="../../images/phone.png"></image>
+        </view>
+        <view class="xx_menu__node_name">丰兄</view>
+        <view class="xx_menu__node_descrtion">
+            <image   class="image_icon" src="../../images/phone.png" style='margin-right:10px'></image>
+            我的会员
+        </view>
+    </view>
+</view>
+
+<!-- 输入栏 -->
+<view class="xx_input__title">手机号码</view>
+<view class="xx_input ">
+    <view class="xx_input__node ">
+        <view >
+                <view class="xx_input__name ">文章体体体</view>
+        </view>
+        <view class='xx_input__line'>
+            <input class="" placeholder="请输入号码" bindinput="inputPhone" />
+        </view>
+    </view>
+    <view class='xx_line__gray'></view> 
+    <view class="xx_input__node ">
+        <view >
+                <view class="xx_input__name ">文章体体体</view>
+        </view>
+         <view class='xx_input__area'> 
+            <textarea class="" placeholder="请输入描述"   placeholder-class="xx_input__placeholder"  value="{{matchConetent}}" bindinput="inputContent" />
+         </view> 
+    </view>
+    <view class='xx_line__gray'></view> 
+    <view class="xx_input__node">
+        <view hover-class='xx_active'>
+                <view class="xx_input__name    xx_text__color_primary" >获取地址1 </view>
+        </view>
+        <view class='xx_input__line'>
+            <input class="" placeholder="请输入号码" placeholder-class="xx_input__placeholder"   bindinput="inputPhone" />
+        </view>
+    </view>
+</view>
+
+
+
+
+
+
+<view class="xx_button__normal" hover-class='xx_button__normal_press'>保存</view>
+<view class="xx_button__primary" hover-class='xx_button__primary_press'>保存</view>
+<view class="xx_button__hx" hover-class='xx_button__hx_press'>华讯按钮</view>
+
+<!-- <view class="xx_input__title">手机号码</view>
+<view class="xx_input ">
+    <view class="xx_input__node ">
+        <view >
+                <view class="xx_input__name ">文章体体体</view>
+        </view>
+         <view class='xx_input__area'> 
+            <textarea class="" placeholder="请输入描述"  value="{{matchConetent}}" bindinput="inputContent" />
+         </view> 
+    </view>
+</view> -->
+
+ <!-- 信息卡片  -->
+<view class='xx_card'>
+    <view class='xx_card__node'>
+        <view class='xx_card__title'>开幕式基特别会议</view>
+        <view class='xx_card__content'>珠江</view>
+    </view>
+</view>
+<view class='xx_card'>
+    <view class='xx_card__node'>
+        <view class='xx_card__title'>开幕式基特别会议</view>
+        <view class='xx_card__content'>珠江</view>
+    </view>
+</view>

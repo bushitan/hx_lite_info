@@ -1,0 +1,60 @@
+
+<import src="../../template/template_pay"/>    
+<view class='xx_mark'>
+    <view class='xx_mark__title_border ' >成为{{fatherTag.tag_name}}会员</view>
+</view>
+
+    <view class="content">
+        <view class="title_des">
+            升级到
+            <image class="icon_vip" src="{{ superVipRole.image_url}}"></image>
+            {{superVipRole.role_name}}  {{superVipRole.role_price}}元/年
+        </view>
+        <view class="title_des">
+            升级到 
+            <image class="icon_vip" src="{{vipRole.image_url}}"></image> 
+            {{vipRole.role_name}}  {{vipRole.role_price}}元/年
+        </view>
+        <view class="title_des" style="margin:0 15px 15px;">
+            成为{{fatherTag.tag_name}}会员后，一年内可以无限制浏览该行业相应会员等级的内容。
+        </view>
+
+        <view class="word-center">
+            <view class="weui-cells weui-cells_after-title">
+                <picker class="pick_line" bindchange="bindPickTag" value="{{roleIndex}}" range="{{roleList}}"  range-key="role_name"> 
+                    <view class="weui-cell weui-cell_select">
+                        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                            <view class="weui-label font_11" >会员等级</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="picker">
+                                <view class="weui-select weui-select_in-select-after font_11" >{{roleList[roleIndex].role_name }}</view>
+                            </view>
+                        </view>
+                    </view>
+                </picker> 
+
+            </view>
+        </view>         
+    </view>    
+<view class="xx_button__hx" hover-class='xx_button__hx_press' catchtap="clickMember" data-pay_mode="{{PAY_MEMBER_SUPER_VIP}}">成为{{fatherTag.tag_name}}会员</view>
+    <view hidden='{{articleID==""?true:false}}'>
+    <view hidden='{{ !showSingleBtn}}'  class="xx_button__normal"   hover-class='xx_button__normal_press'
+        catchtap="clickSingle"  data-pay_mode="{{PAY_SINGLE_VIP}}" >
+            我就看这篇
+    </view>
+</view> 
+<view class="xx_button__normal" hover-class='xx_button__normal_press' catchtap="toBack" >返回</view>
+
+
+<!-- <template is="pay_order" data="{{showOrder:showOrder ,styleOrder:styleOrder ,STYLE_ORDER_MEMBER:STYLE_ORDER_MEMBER ,order:order ,roleIndex:roleIndex ,showSingleBtn:showSingleBtn}}"/> -->
+
+ <view class="classname" hidden="{{!showOrder}}"> 
+    <template is="pay_order_member" data="{{orderDict:orderDict ,discountList:discountList ,discountIndex:discountIndex,isPayBtnDisable:isPayBtnDisable}}"/>
+ </view> 
+
+<view class="protocol_page"  hidden='{{!showProcotol}}'>
+    <!-- <template is="pay_protocol"/> -->
+    <rich-text nodes="{{procotolDict.content}}"></rich-text>
+    <button type="primary" catchtap='closeProtocol' >已知晓协议内容</button>
+</view>

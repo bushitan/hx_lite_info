@@ -1,0 +1,44 @@
+<!--pages/news/news.wxml-->
+<view class="page"  >
+    <scroll-view style="height: {{windowHeight}}px;"  scroll-y="true" bindscrolltolower="scrollBottom" > 
+        <view class="panel__hd white">
+            <label class="">供求信息</label>
+            <!-- <label class="history_filter weui-cell__ft_in-access" catchtap="historyFilter">{{filter}}</label> -->
+        </view>
+        <view class="bottom-border "></view>
+        <view class="">
+            <import src="../../waterfall/waterfall.wxml"/>
+            <template is="news" data="{{artList: artList}}"/>
+        </view>
+ 
+    </scroll-view> 
+    <view class="add_news">
+        <view >
+            <image  src="../../images/ic_action_add.png" background-size="cover" catchtap="addNews"></image>
+        </view>
+    </view>
+</view>
+
+ <template name="news">
+    <block wx:for="{{artList}}" >
+        <view wx:if="{{item.is_banner == 0}}" 
+        class="media-box"
+        catchtap="toArticle" data-id="{{item.id}}">       
+                <view class="">
+                    <view class="history__title ">
+                        {{item.title}}                        
+                    </view>
+                    <view class="news__des ">
+                        {{item.subtitle}}
+                    </view>
+                    <view class="history__footer ">
+                        <!-- <label> <label class="read">阅读</label> {{item.click_rate}}</label> -->
+                        <label> {{item.issue_time}}</label> 
+                    </view> 
+                </view>
+        </view>
+        <view wx:else class="banner" catchtap="bannerToArticle" data-id="{{item.id}}">
+            <image  src="{{item.cover}}"></image>
+        </view>
+    </block>
+</template>

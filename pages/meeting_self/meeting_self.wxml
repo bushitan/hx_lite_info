@@ -1,0 +1,85 @@
+<view class="page">
+    
+    <view class='xx_mark' wx:if="{{order_list.length == 0}}" >
+        <view class='xx_mark__title_border ' >您还没有支付订单记录</view>
+    </view>
+     <view class='xx_mark' wx:else >
+        <view class='xx_mark__title_border ' >我的订单记录</view>
+    </view>
+
+    <!-- <view wx:if="{{order_list.length == 0}}" class="dialog" >温馨提示：您还没有支付订单记录</view>
+    <view class="dialog" wx:else>温馨提示：点击付款可查看更详细的信息</view> -->
+    <!-- <view class="time">
+        <label>2017-12-12 13:04</label>
+    </view>
+    <view class="order" catchtap="toOrderDetail">
+        <view class="o1" >
+             <image src="../../images/single.png"></image>松香行业会议
+        </view>
+        <view class="o2">
+            <view class="o2_1">已付款</view>
+            <view class="o2_2">
+                 <image src="../../images/meet_qr.jpg"></image>
+            </view>   
+            <view class="o2_2">
+                入场券
+            </view>   
+        </view>
+        <view class="bottom-border "></view>
+        <view class="o3 cell__ft_in-access" >
+        查看支付详情
+        </view>
+    </view>
+
+    <view class="order" catchtap="toOrderDetail">
+        <view class="o1" >
+             <image src="../../images/mine_fill.png"></image>行业VIP会议
+        </view>
+        <view class="o2">
+            <view class="o2_1">已付款</view>
+            <view class="o2_2">
+                 <image src="../../images/meet_qr.jpg"></image>
+            </view>   
+            <view class="o2_2">
+                入场券
+            </view>   
+        </view>
+        <view class="bottom-border "></view>
+        <view class="o3 cell__ft_in-access" >
+        查看支付详情
+        </view>
+    </view> -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <block wx:for="{{order_list}}">
+        <view class="time">
+            <label>{{item.create_time}}</label>
+        </view>
+        <view class="order" catchtap="toOrderDetail">
+            <view class="o1" wx:if="{{item.agreement_type == AGREEMENT_TYPE_MEMBER}}">
+                <image src="../../images/mine_fill.png"></image> 会员
+            </view>
+            <view class="o1" wx:else>
+                <image src="../../images/single.png"></image> 点播
+            </view>
+            <view class="o2">
+                <view class="o2_1">付款金额</view>
+                <view class="o2_2">￥{{item.payment_fee}}</view>   
+            </view>
+            <view class="bottom-border "></view>
+            <view class="o3 cell__ft_in-access" >
+            查看账单
+            </view>
+        </view>
+    </block> -->
+    
+</view>

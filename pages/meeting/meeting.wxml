@@ -1,0 +1,60 @@
+<!--pages/news/news.wxml-->
+<view class="page"  >
+    <scroll-view class='roll__scroll_view' scroll-y="true" bindscrolltolower="scrollBottom" > 
+        <view class='xx_mark'>
+            <view class='xx_mark__title_border ' >会议、培训</view>
+        </view>
+        <view  style='height:10px;' ></view>  
+            <import src="../../template/roll.wxml"/>
+            <template is="list_meet" data="{{articleList: articleList}}"/>
+            <template is="loading" data="{{isMore:isMore}}"/> 
+    </scroll-view> 
+</view>
+
+ <template name="list_meet">
+ <block wx:for="{{articleList}}" >
+    <view class='xx_list' hover-class='xx_active'  catchtap="toArticle" data-id="{{item.article_id}}">
+        <view class='xx_list__node'>
+            <view class='xx_list__cover'>
+                <image src='{{item.cover}}'></image>
+            </view>
+            <view>
+                <view class='xx_list__title xx_text__center'>  {{item.title}}     </view>
+                <view class='xx_list__time xx_text__right'>{{item.issue_time}}</view>
+            </view>
+        </view>
+        
+        <!-- <view class='xx_line__gray'></view> -->
+    </view> 
+        <view  style='height:8px;' ></view>  
+    
+    </block>
+</template>
+
+
+<!-- 
+ <template name="meeting">
+    <block wx:for="{{articleList}}" >
+        <view wx:if="{{item.is_banner == 0}}" 
+        class="meeting__box"
+        catchtap="toArticle" data-id="{{item.article_id}}">       
+                <view class="">
+                    <view class="cover">
+                        <image src="{{item.cover}}"></image>
+                    </view>
+                    <view class="meeting__title ">
+                        {{item.title}}                        
+                    </view>
+                    <view class="meeting__des ">
+                        {{item.subtitle}}
+                    </view>
+                    <view class="meeting__footer ">
+                        <label> {{item.issue_time}}</label> 
+                    </view> 
+                </view>
+        </view>
+        <view wx:else class="banner" catchtap="bannerToArticle" data-id="{{item.article_id}}">
+            <image  src="{{item.cover}}"></image>
+        </view>
+    </block>
+</template> -->

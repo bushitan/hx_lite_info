@@ -1,0 +1,13 @@
+<!--pages/index_bar/index_bar.wxml-->
+<view class='xx_mark'>
+    <view class='xx_mark__title_border ' >请选择您所在的行业</view>
+</view>
+<view class=''>
+    <view  class=''>
+        <block wx:for="{{tagFatherList}}">
+            <view class="tag_name" catchtap='toIndex' data-tag_id="{{item.tag_id}}">
+                <label>{{item.tag_name}}</label>
+            </view>
+        </block>
+    </view>
+</view>

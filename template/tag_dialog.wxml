@@ -1,0 +1,15 @@
+
+
+
+<template name="tag_dialog">
+    <view class='screen_dialog screen_bg__black_30' catchtap='closeDialog' hidden='{{!showDialog}}'>
+        <view  class='tag_dialog'>
+            <block wx:for="{{match_list}}">
+                <view class='tag_dialog__block'>
+                    <view class="tag_dialog__btn" hover-class='xx_button__normal_press' 
+                    catchtap='clickSonTag' data-tag_id="{{item.tag_id}}" data-show_name="{{item.tag_name}}">{{item.tag_name}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
