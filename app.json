@@ -28,7 +28,7 @@
         "backgroundTextStyle": "light",
         "navigationBarTitleText": "华讯生物圈",
         "navigationBarTextStyle": "white",
-        "enablePullDownRefresh": "false"
+        "enablePullDownRefresh": false
     },
     "tabBar": {
         "backgroundColor": "#fcfcfc",

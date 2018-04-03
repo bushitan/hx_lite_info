@@ -9,7 +9,7 @@
 
     <!-- <view wx:if="{{order_list.length == 0}}" class="dialog" >温馨提示：您还没有支付订单记录</view>
     <view class="dialog" wx:else>温馨提示：点击付款可查看更详细的信息</view> -->
-    <!-- <view class="time">
+     <view class="time">
         <label>2017-12-12 13:04</label>
     </view>
     <view class="order" catchtap="toOrderDetail">
@@ -48,7 +48,7 @@
         <view class="o3 cell__ft_in-access" >
         查看支付详情
         </view>
-    </view> -->
+    </view> 
 
 
 
