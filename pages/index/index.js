@@ -1,4 +1,5 @@
 // pages/together/together.js
+var QUERY = require('../../action/query.js');
 var API = require('../../utils/api.js');
 var KEY = require('../../utils/storage_key.js');
 var PRO_ARTICLE = require('../../pro/pro_article.js');
@@ -64,7 +65,6 @@ Page({
      * 点击文章
      */
     checkArticle:function(e){
-
         var article_id = e.currentTarget.dataset.article_id
         var _role_value = e.currentTarget.dataset.role_value
         if (_role_value > ROLE_LEVEL_1) { //当不是普通文章
@@ -107,19 +107,56 @@ Page({
      */
     onLoad:function(options){
         GP = this
-               
-        //必须要登陆以后再做的事情
-        if(APP.globalData.isLogin == true)
-            GP.onInit(options)
-        else
-            APP.login(options)
+        QUERY.init(APP,GP)
+        console.log(QUERY.getGP())
+        
+        GP.getIndustry()
+        // // wx.request({
+        // API.Request({
+        //     url: 'https://api.308308.com/cms/ca/get_info_by_openid?access_token=6ef82ff5fb537e755335bc2da691c79e', //仅为示例，并非真实的接口地址
+        //     // url: 'https://api.308308.com/cms/ca/get_info_by_openid/', //仅为示例，并非真实的接口地址
+        //     method:"POST",
+        //     data: {
+        //         "open_id": "oNUgxv608YVIclrLMz_0egqocXcI",
+        //         // "access_token":"6ef82ff5fb537e755335bc2da691c79e",
+        //     },
+        //     header: {
+        //         'content-type': 'application/json' // 默认值
+        //     },
+        //     success: function (res) {
+        //         console.log(res.data)
+        //     }
+        // })
+
+
+
+        // //必须要登陆以后再做的事情
+        // if(APP.globalData.isLogin == true)
+        //     GP.onInit(options)
+        // else
+        //     APP.login(options)
 
     },
+
+    getIndustry(){
+        API.Request({
+            url: API.API_308_GET_ALL_INDUSTRY,
+            data: {},
+            success: function (res) {
+                console.log(res.data)
+            }
+        })
+
+            
+    },
+
+
 
     /**
      * 选择新行业后返回，更新默认目录
      */
     onShow() {
+        console.log(QUERY.getGP())
         if (APP.globalData.isLogin == true){  //已经登录
             var _father_tag_id = wx.getStorageSync(APP.KEY.FATHER_TAG).tag_id
             if ( parseInt(_father_tag_id) != parseInt(GP.data.fatherTag.tag_id) ) {  //检测是否重新选择行业标签

@@ -1,4 +1,5 @@
 // pages/together/together.js
+var QUERY = require('../../action/query.js');
 var API = require('../../utils/api.js');
 var KEY = require('../../utils/storage_key.js');
 var PRO_ARTICLE = require('../../pro/pro_article.js');
@@ -20,6 +21,8 @@ Page({
     //根据id获取节目信息
     onLoad: function (options) {
         GP = this
+        QUERY.init(APP, GP)
+        console.log(QUERY.getGP())
 
         //必须要登陆以后再做的事情
         if (APP.globalData.isLogin == true)
@@ -32,6 +35,8 @@ Page({
     //TODO 增加信息时，全部刷新
     //检测快讯是否已经更换目录
     onShow: function () {
+        console.log(QUERY.getGP())
+        
         if (APP.globalData.isLogin == true) {  //已经登录
             var _father_tag_id = wx.getStorageSync(APP.KEY.FATHER_TAG).tag_id
             if (parseInt(_father_tag_id) != parseInt(GP.data.fatherTag.tag_id)) {  //检测是否重新选择行业标签

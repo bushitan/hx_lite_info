@@ -3,8 +3,9 @@
 
 module.exports = {
     emoticon:"emoticon",
-    category:"category",
-    session:"session",
+    category: "category",
+    session: "session",
+    SESSION: "session",
     USER_INFO:"USER_INFO", //用户信息
     // PAINTER_USER_STATUS:"PAINTER_USER_STATUS", // 1开始画  2继续画
     PAINTER_USER_IS_FREE:"PAINTER_USER_IS_FREE", //页面显示 true开始画 free,  false继续画 busy
